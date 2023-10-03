@@ -1,8 +1,9 @@
 """The wordle that wordles."""
 __author__ = "730577554"
 
-def contains_char(main_str: str, target_str: str ) -> bool:
-    """Returns True if target character is found in any index of main string, false otherwise"""
+
+def contains_char(main_str: str, target_str: str) -> bool:
+    """Returns True if target character is found in any index of main string, false otherwise."""
     assert len(target_str) == 1 
     index: int = 0
     while index < len(main_str):  # Goes through main_str to find a target_str
@@ -11,8 +12,9 @@ def contains_char(main_str: str, target_str: str ) -> bool:
         index += 1
     return False
 
+
 def emojified(guess_str: str, secret_str: str) -> str:
-    """Return a string of emojis if contains target letter in main string when given guess"""
+    """Return a string of emojis if contains target letter in main string when given guess."""
     assert len(guess_str) == len(secret_str)  # Checks if guess is the same length as secret
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"
@@ -30,15 +32,17 @@ def emojified(guess_str: str, secret_str: str) -> str:
         index += 1
     return result
 
+
 def input_guess(expected_len: int) -> str:
-    """Returns user guess after it ensures it is the correct amount of characters"""
+    """Returns user guess after it ensures it is the correct amount of characters."""
     user_guess = input(f"Enter a {expected_len} character word: ")
     while expected_len != len(user_guess):
         user_guess = input(f"That wasn't {expected_len} chars! Try again: ")
-    return(user_guess)
+    return (user_guess)
+
 
 def main() -> None:
-    """Main loop of game, uses other functions"""
+    """Main loop of game, uses other functions."""
     secret_word: str = "codes"
     user_turns: int = 1
     max_turns: int = 6
@@ -53,5 +57,7 @@ def main() -> None:
         user_turns += 1
     print(f"X/{max_turns} - Sorry, try again tomorrow!")
 
+
 if __name__ == "__main__":
+
     main()
