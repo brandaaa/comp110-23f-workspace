@@ -2,8 +2,8 @@
 __author__ = "730577554"
 
 
-def all(int_list: int, num_match: int ) -> bool:
-    """Returns True if the numbers in the list match the number of the second parameter, target number"""
+def all(int_list: list[int], num_match: int) -> bool:
+    """Returns True if the numbers in the list match the number of the second parameter, target number."""
     if len(int_list) == 0:  # Checks if the list is empty
         return False
     index = 0
@@ -15,7 +15,7 @@ def all(int_list: int, num_match: int ) -> bool:
 
 
 def max(input: list[int]) -> int:
-    """Returns the max number of a list"""
+    """Returns the max number of a list."""
     if len(input) == 0:  # Checks if list is empty
         raise ValueError("max() arg is an empty list")
     max_num: int = input[0]  # Current max number is the first index
@@ -27,8 +27,8 @@ def max(input: list[int]) -> int:
     return max_num  # Returns the max number
 
 
-def is_equal(list1: int, list2: int) -> bool:
-    """Returns True if numbers in the first list match the numbers of the second list"""
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Returns True if numbers in the first list match the numbers of the second list."""
     if len(list1) != len(list2):  # Checks if both list are same length
         return False
     index = 0
