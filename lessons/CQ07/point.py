@@ -8,7 +8,7 @@ class Point:
     x: float
     y: float
 
-    def __init__(self, x_init: float, y_init: float):
+    def __init__(self, x_init: float = 0.0, y_init: float = 0.0):
         """Defining constructor."""
         self.x = x_init
         self.y = y_init
@@ -21,3 +21,15 @@ class Point:
     def scale(self, factor: int) -> Point:
         """Creating new point."""
         return Point(self.x * factor, self.y * factor)
+    
+    def __str__(self) -> str:
+        """Return a string representation of the Point."""
+        return f"x: {self.x}; y: {self.y}"
+
+    def __mul__(self, factor: int | float) -> Point:
+        """Overload the * operator."""
+        return Point(self.x * factor, self.y * factor)
+
+    def __add__(self, factor: int | float) -> Point:
+        """Overload the + operator."""
+        return Point(self.x + factor, self.y + factor)
