@@ -15,6 +15,8 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(color_dict: dict[str, str]) -> str:  
     """Dictionary to store color."""
+    if not color_dict:
+        return None
     color_count: dict[str, int] = {}
     for color in color_dict.values():
         color_count[color] = color_count.get(color, 0) + 1
