@@ -26,7 +26,7 @@ class Node:
         """Return the data attribute."""
         return self.data
     
-    def tail(self) -> 'Node' | None:
+    def tail(self) -> Node | None:
         """Return a linked list of every element minus head."""
         if self.next is None:
             return None
